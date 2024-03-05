@@ -6,8 +6,8 @@ module.exports = {
 
 async function sendOTP(data) {
     // const brand = new Brand(contents);
-
-    const uuu = `http://online.chennaisms.com/api/mt/SendSMS?user=bulksms6&password=Bulksms@9&senderid=CHNNAI&channel=Trans&DCS=0&flashsms=0&number=91${data.number}&text= ${data.otp} is your OTP. Valid for 2mins. CEPC&route=6`
+    var texts = ' is your OTP. Valid for 2mins. '
+    const uuu = `http://online.chennaisms.com/api/mt/SendSMS?user=bulksms6&password=Bulksms@9&senderid=CHNNAI&channel=Trans&DCS=0&flashsms=0&number=91${data.number}&text=${data.otp}${texts}CEPC&route=6`
     fetch(uuu)
         .then(response => {
             // handle response

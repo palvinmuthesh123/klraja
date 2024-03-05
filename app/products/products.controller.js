@@ -3,12 +3,12 @@ const router = express.Router();
 const productService = require('./products.service');
 
 // routes
-router.get('/otp' ,sendOTP);
+router.post('/otp' ,sendOTP);
 
 module.exports = router;
 
 function sendOTP(req, res, next) {
-    productService.sendOTP()
+    productService.sendOTP(req.body)
         .then(product => res.json(product))
         .catch(err => next(err));
 }
